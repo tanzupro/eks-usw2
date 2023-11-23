@@ -46,26 +46,26 @@ tap_install:
       tuf_enabled: false
     cnrs:
       domain_template: '{{.Name}}-{{.Namespace}}.{{.Domain}}'
-    api_portal:
-      apiPortalServer:
-        sourceUrls: https://petstore.swagger.io/v2/swagger.json,http://scg-openapi-service.spring-cloud-gateway.svc.cluster.local/openapi
-        trustInsecureSourceUrls: true
-        sourceUrlsCacheTtlSec: "30"
-        sourceUrlsTimeoutSec: "30"
-      sso:
-        enabled: true
-        secretName: sso-credentials
-        apiManager:
-          roles: tanzu.read
-      apiKey:
-        enabled: true
-        vault:
-          url: http://vault.vault.svc:8200/
-          role: api-portal-role
-          path: api-portal-for-vmware-tanzu
-      serviceAccount:
-        create: true
-        name: api-portal
+    # api_portal:
+    #   apiPortalServer:
+    #     sourceUrls: https://petstore.swagger.io/v2/swagger.json,http://scg-openapi-service.spring-cloud-gateway.svc.cluster.local/openapi
+    #     trustInsecureSourceUrls: true
+    #     sourceUrlsCacheTtlSec: "30"
+    #     sourceUrlsTimeoutSec: "30"
+    #   sso:
+    #     enabled: true
+    #     secretName: sso-credentials
+    #     apiManager:
+    #       roles: tanzu.read
+    #   apiKey:
+    #     enabled: true
+    #     vault:
+    #       url: http://vault.vault.svc:8200/
+    #       role: api-portal-role
+    #       path: api-portal-for-vmware-tanzu
+    #   serviceAccount:
+    #     create: true
+    #     name: api-portal
     local_source_proxy:
       repository: harbor.tanzu.pro/tap/local-source
       push_secret:
